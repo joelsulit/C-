@@ -6,22 +6,22 @@ namespace game {
 			int randomInt = rand.Next(1, 10);
 			Console.WriteLine("Welcome to Guessing Number Game!");
 	
-			Console.Write("Choose Between 1-10: ")
-			int number = ConvertToInt32(Console.ReadLine);
+			Console.Write("Choose Between 1-10: ");
+			int number = Convert.ToInt32(Console.ReadLine());
 
 			int lives = 3;
 
-			while (lives <= 0) {			
+			while (lives > 1) {			
 				if (number == randomInt) {
 					Console.WriteLine("Number " + number + " is Correct!!");
 					break;
 				} else {
 					lives -= 1;
+              		Console.WriteLine("Number " + number + " is Incorrect!!");
 					Console.WriteLine("Try Again");
 					Console.WriteLine("You have " + lives + " more try!");
-					Console.Write("Choose Between 1-10: ")
-					int number = ConvertToInt32(Console.ReadLine);
-				}
+					Console.Write("Choose Between 1-10: ");
+					number = Convert.ToInt32(Console.ReadLine());
 			}
 		}
 	}
